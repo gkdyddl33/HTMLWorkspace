@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>로그인 폼 만들기</title>
+</head>
+<body>
+	<table width="300px" border="2px">
+		<tr>
+		<!--input type = " text "는 입력창을 만들어 주는 문법임을 알아두기-->
+			<td><input type="text" placeholder="Your ID..." size="38"/></td>
+		</tr>
+		<tr>
+		<!--placeholder은 힌트를 주는 것 마우스로 누르면 힌트가 사라짐-->
+		<!--maxlength 는 최대 입력 길이를 설정할 수 있다. 현재는 8자리만 입력가능.-->
+		<!--"text"는 작성할 시 문자가 그대로 표현이 되고, "password"는 문자로 가려준다.-->
+			<td><input type="password" placeholder="Your Password..." size="38" maxlength="8"/></td>
+		</tr>
+		<tr>
+			<td>
+			<!--누르는 박스가 생성됨-->
+				<button>가입하기</button>
+				<button>Login</button>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

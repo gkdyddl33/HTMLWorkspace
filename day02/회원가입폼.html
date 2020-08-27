@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>회원가입 양식</title>
+<!--style을 각각 계속 수정하면서 바꾸기에는 넘 불편해서 상단에 인라인 시킨다.
+	즉, 스타일시트를 적용하는 방법은 2가지가 있음
+	1. 인라인 방식 : 해당 태그에 직접 명시하는 방식 -> 단점) 적용대상이 많을경우 효율성이 떨어진다.
+	2. 임베디드 방식 : style 태그에 일괄적용하는 방식
+			- 문법형식		어떤 태그를 대상으로 어떠한 처리를 할지를 표현하면 된다.
+							ex) td {font-size:9pt}
+	-->
+<style>
+table{
+	border:20px  dotted red;/* solid red; 두께를 20, 실선으로 하되, 빨간색 선으로*/
+}
+
+td{
+/* 해당 문법형식에서 대상을 가리켜, 선택자라 한다.
+	ex)	td 선택자	= td 를 대상으로 */
+
+	font-size:9pt;
+	background:yellow;
+}
+
+input{
+	background:dodgerblue;
+	color:white; /*그냥 color인 경우 글씨색을 말하는 것*/
+}
+
+select{
+	background:green;
+	color:white;
+}
+
+/*선택자로 아이디를 사용할 경우 -> #을 붙인다.*/
+#t_name{
+	background:pink;
+}
+
+body{
+	background:black;
+}
+</style>
+
+</head>
+<body>
+
+<table width="600px" border="2px" align="center">
+
+	<tr>
+		<td colspan="2" align="center">
+		<!--글씨체 font : size는 글자 포인트 크기를 나타내며
+			89년도에 만들어진 것으로 디자인보다는 데이터를 주고 받는데 사용을 했다.
+			그래서 글짜 크기가 이 이상 커지지가 않는다.
+			<font size = "" (x), style = ""로 사용 = CSS-->
+			회원가입
+		</td>
+	</tr>
+	<tr>
+	<!--2호수 이기 때문에  td가 2개-->
+		<td >ID</td>
+		<td><input type="text" placeholder="아이디 입력.."/></td>
+	</tr>
+	<tr>
+		<td>Pass</td>
+		<td><input type="password" placeholder="비밀번호 입력.."/></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<!--여기서 id를 만들었다면 id를 선택자로 선택해 따로 뽑아서 사용할 수 있다-->
+		<td><input type="text" id="t_name" placeholder="이름 입력.."/></td>
+	</tr>
+	<tr>
+		<td>연락처</td>
+		<td>
+		<!--option 선택을 할 수 있게 해주는 select 와 option 태그 알아두기!!-->
+			<select>
+				<option>010</option>
+				<option>011</option>
+				<option>017</option>
+				<option>019</option>
+			</select>
+			<!--국번 앞자리 뒷자리-->
+			-<input type="text" placeholder="앞자리" size="5"/>
+			-<input type="text" placeholder="뒷자리" size="5"/>
+		</td>
+	</tr>
+	<tr>
+		<td>취미</td>
+		<td>
+			여행<input type="checkbox"/>
+			독서<input type="checkbox"/>
+			운동<input type="checkbox"/>
+			IT<input type="checkbox"/>
+		</td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td>
+			<input type="text" placeholder="메일 아이디.."/>@
+			<!--option 선택을 할 수 있게 해주는 select 와 option 태그 알아두기!!-->
+			<select>
+				<option>네이버</option>
+				<option>구글</option>
+				<option>한메일</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+	<!--양자택일 할 수 있는 태그를 사용 radio는 누르는 버튼을 만들어 주고,
+		receive는 하나만 선택할 수 있게끔 만들어 준다.-->
+		<td>메일수신</td>
+		<td>
+			예<input type="radio" name="receive"/>
+			아니오<input type="radio" name="receive"/>
+		</td>
+	</tr>
+	<tr>
+		<td>우편번호</td>
+		<td>
+		<!--readonly 읽기 전용 태그임을 알아두기!!-->
+			예<input type="text" placeholder="우편번호" size="5" readonly/>
+			<button>우편번호 검색</button>
+		</td>
+	</tr>
+
+	<!--셀을 합쳐서 버튼을 만들어주기-->
+	<tr>
+		<!--align : 중앙 정렬을 맞춰주는 것-->
+		<td colspan="2" align="center">
+			<button>가입하기</button>
+		</td>
+	</tr>
+
+</table>
+
+</body>
+</html>
