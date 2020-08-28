@@ -6,67 +6,91 @@
 <title>Document</title>
 
 <style>
+#box{
+	width:100px;
+	position:absolute;
+	left:0px;
+	top:100px;
+	animation-name:move;
+	animation-duration:4s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+}
+
 #ball{
 	width:100px;
-	height:100px;
-	border-radius:50px;
-	background:pink;
-
 	position:absolute;
-
-	/* 이 CSS가 사용하게 될 애니메이션 프레임 이름*/ 
+	left:0px;
+	top:100px;
 	animation-name:bounce;
-	animation-duration:4s;
-
-	/* 2번 실행 : infinite 무한대*/
+	animation-duration:0.4s;
 	animation-iteration-count:infinite;
 	animation-direction:alternate;
 }
-#ball2{
-	width:200px;
-	height:200px;
-	border-radius:10px;
-	background:pink;
-
+#shadowWrapper{
+	width:100px;
+	height:10px;
 	position:absolute;
-
-	/* 이 CSS가 사용하게 될 애니메이션 프레임 이름*/ 
-	animation-name:bounce2;
+	left:0px;
+	top:550px;
+	animation-name:move;
 	animation-duration:4s;
-
-	/* 2번 실행 : infinite 무한대*/
 	animation-iteration-count:infinite;
 	animation-direction:alternate;
 }
+#shadow{
+	width:100%;
+	height:100%;
+	background:#cccccc;
+	border-radius:40px;
+	animation-name:size;
+	animation-duration:0.4s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
 }
-/* 애니메이션 프레임 정의 - 이름은 우리가 정한다(배경을 변경하는 것)*/
+
+@keyframes move{
+	from{
+		left:0px;
+	}
+	to{
+		left:900px;
+	}
+}
 @keyframes bounce{
-	from,to{
-		bottom:0px;
-		animation-timing-function:ease-out;
+	from{
+		top:300px;
 	}
-	50%{
-		bottom:200px;
-		animation-timing-function:ease-in;
+	to{
+		top:0px;
 	}
 }
-@keyframes bounce2{
-	from,to{
-		bottom:0px;
-		animation-timing-function:ease-out;
+@keyframes size{
+	from{
+		width:100px;
+		height:20px;
+
 	}
-	50%{
-		bottom:200px;
-		animation-timing-function:ease-in;
+	to{
+		width:30px;
+		height:10px;
 	}
+}
+body{
+	
 }
 </style>
 
 </head>
 <body>
-	<div>
-		<div id="ball"></div>
-		<div id="ball2></div>
+
+	<div id="box">
+		<img id="ball" src="../images/ball.png"/>
 	</div>
+
+	<div id="shadowWrapper">
+		<div id="shadow"></div>
+	</div
+
 </body>
 </html>
