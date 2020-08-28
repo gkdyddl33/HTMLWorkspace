@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Document</title>
+
+<style>
+#ball{
+	width:100px;
+	height:100px;
+	border-radius:50px;
+	background:pink;
+
+	position:absolute;
+
+	/* 이 CSS가 사용하게 될 애니메이션 프레임 이름*/ 
+	animation-name:bounce;
+	animation-duration:4s;
+
+	/* 2번 실행 : infinite 무한대*/
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+}
+#ball2{
+	width:200px;
+	height:200px;
+	border-radius:10px;
+	background:pink;
+
+	position:absolute;
+
+	/* 이 CSS가 사용하게 될 애니메이션 프레임 이름*/ 
+	animation-name:bounce2;
+	animation-duration:4s;
+
+	/* 2번 실행 : infinite 무한대*/
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+}
+}
+/* 애니메이션 프레임 정의 - 이름은 우리가 정한다(배경을 변경하는 것)*/
+@keyframes bounce{
+	from,to{
+		bottom:0px;
+		animation-timing-function:ease-out;
+	}
+	50%{
+		bottom:200px;
+		animation-timing-function:ease-in;
+	}
+}
+@keyframes bounce2{
+	from,to{
+		bottom:0px;
+		animation-timing-function:ease-out;
+	}
+	50%{
+		bottom:200px;
+		animation-timing-function:ease-in;
+	}
+}
+</style>
+
+</head>
+<body>
+	<div>
+		<div id="ball"></div>
+		<div id="ball2></div>
+	</div>
+</body>
+</html>

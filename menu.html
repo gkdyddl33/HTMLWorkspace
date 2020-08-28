@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Document</title>
+
+<style>
+/* 메뉴들을 묶어놓을 박스에 대한 클래스 정의 */
+.menu{
+	width:190px;
+	background:yellow;
+}
+/* 모든 a가 아니라 menu 하위에 있는 a 이다.
+	즉, 선택자는 조합하여 사용할 수 있다. 선택자 뒤에 한 칸을 띄우면,
+	하위 요소를 가르킨다.*/
+.menu a{
+	/* inline 속성을 블럭으로 전환 : 너비와 높이가 가능, 즉 크기를 가질 수 있다. */
+	/* display 는 전환을 해주는 역할 */
+	display:block;
+	/* 밑줄 없애기 */
+	text-decoration:none;
+	background-color:#eeeeee;
+	color:#000000;
+	/* a태그를 이루는 박스와, 그 안에 있는 글씨가 박스와 너무 붙었다. 간격을 벌리자
+		상하좌우를 다 조정할려면 그냥 'padding' 을 사용 */
+	padding:10px;
+}
+/* 유사클래스(:)를 이용하여 링크 태그에 마우스를 올려놓으면(hover) 배경색 바꾸기 */
+.menu a:hover{
+	background-color:#cccccc;
+}
+/* a태그에 적용된 클래스 : 활성화(active) */
+.menu a.active{
+	background-color:#4CAF50;
+	color:#FFFFFF;
+}
+</style>
+</head>
+<body>
+
+	<div class="menu">
+		<a href="#" class="active">1일차</a>
+		<a href="#">예제1</a>
+		<a href="#">예제2</a>
+		<a href="#">예제3</a>
+		<a href="#">예제4</a>
+	</div>
+		<div class="menu">
+		<a href="#" class="active">2일차</a>
+		<a href="#">예제1</a>
+		<a href="#">예제2</a>
+		<a href="#">예제3</a>
+		<a href="#">예제4</a>
+	</div>
+	<div class="menu">
+		<a href="#" class="active">3일차</a>
+		<a href="./day03/레이아웃.html" target="myframe">레이아웃 학습</a>
+		<a href="./day03/인라인블럭.html" target="myframe">inline-block</a>
+		<a href="./day03/박스모델.html" target="myframe">Box 모델</a>
+		<a href="#./day03/트랜지션.html" target="myframe">Transition(전이,변화)</a>
+		<!-- main에서 name으로 설정해놓고 target으로 설정을 해주면 
+			링크를 눌렀을 때 해당 페이지는 그대로 두고 다른 페이지로 날라가서 실행시켜준다. -->
+		<a href="./day03/동영상.html" target="myframe">동영상 제어</a>
+		<a href="./day03/애니메이션.html" target="myframe">애니메이션</a>
+		<a href="./day03/애니메이션.html" target="myframe">공튕기기</a>
+	</div>
+	<div class="menu">
+		<a href="#" class="active">4일차</a>
+		<a href="#">예제1</a>
+		<a href="#">예제2</a>
+		<a href="#">예제3</a>
+		<a href="#">예제4</a>
+	</div>
+</body>
+</html>
